@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import logo from '../assets/1 (2).png'
 import { useState } from 'react'
+import { CaptainDataContext } from '../context/CaptainContext'
 
 const CaptainSignup = () => {
     const [email, setEmail] = useState('')
@@ -9,6 +10,12 @@ const CaptainSignup = () => {
         const [firstName, setFirstName] = useState('')
         const [lastName, setLastName] = useState('')
         const [userData, setUserData] = useState({})
+
+        const [vehicleColor, setVehicleColor] = useState('')
+        const [vehiclePlate, setVehiclePlate] = useState('')
+        const [vehicleType, setVehicleType] = useState('')
+        
+        const { captain, setCaptain } = React.useContext(CaptainDataContext)
     
         const submitHandler = (e)=>{
             e.preventDefault();
